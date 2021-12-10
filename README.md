@@ -56,4 +56,4 @@ The speed layer is responsible for streaming in new sensor reading data and incr
 The UI layer displays the HBase views via a Node.js web application. To build the UI layer:
 * ```cd``` into the ```ui-layer``` directory
 * run ```npm install```
-* Then, the server can be started in screen/tmux with ```node app.js 3008 172.31.39.49 8070```.
+* Then, the server can be started in ```screen```/```tmux``` with ```node app.js 3008 172.31.39.49 8070```.
