@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+  <head>
+    <title>Sensor Readings</title>
+    <link type="text/css" rel="stylesheet" href="elegant-aero.css" />
+      <style>
+          a {
+              color: #064273;
+              background-color: transparent;
+              text-decoration: none;
+          }
+          a:hover {
+              color: #7fcdff;
+              background-color: transparent;
+              text-decoration: underline;
+          }
+      </style>
+  </head>
+  <!-- Background image source: https://dashboard.sealevelsensors.org/-->
+  <body style='background-image:url("smart-sensor-map.png"); background-position:center top;-webkit-background-size:100%;-moz-background-size:100%;-o-background-size:100%;background-size: 100%;'>
+    <p style="margin-bottom:2cm"></p>
+    <p class="elegant-aero" style="font-family: Helvetica; padding:5px; background:#FFFFFF;width:100px;margin:auto; position: relative; left: 230px;"><a href="submit-reading.html">Input Reading</a></p>
+    <form action="/sensors.html" style="width:580px;margin:10px auto;background:#FFFFFF" method="get" target="results_iframe" class="elegant-aero">
+        <h3 style="margin: 10px auto 0px auto; text-align: center; font-family: Helvetica">Smart Sea Level Sensor Readings</h3>
+        <p style="margin: 5px auto 0px auto; text-align: center; font-family: Helvetica; font-size: 12px"><a href="https://www.sealevelsensors.org/">Sensor Data Source</a> | <a href="https://www.ncdc.noaa.gov/cdo-web/search">Weather Data Source</a></p>
+        <br>
+	<span style="font-family: Helvetica">&nbsp;&nbsp;Select Sensor:&nbsp;</span>
+      <select name="sensor" style="font-family: Helvetica; font-size: 14px; color: black; background:url('arrow.png') no-repeat; background-size:10px;
+  background-position:98% center;">
+          <option value="0.0" selected>Fort Pulaski (A) Water Level Monitor</option>
+          <option value="1.0">Hutchinson Island Water Level Monitor</option>
+          <option value="2.0">Walthour Road Water Level Monitor</option>
+          <option value="3.0">Oatland Island Road Water Level Monitor</option>
+          <option value="4.0">Hunt Drive on Burnside Island Water Level Monitor</option>
+          <option value="5.0">Sullivan Street Water Level Monitor</option>
+          <option value="6.0">Hwy 80 at Grays Creek Water Level Monitor</option>
+          <option value="7.0">Faye Drive on Burnside Island Water Level Monitor</option>
+          <option value="8.0">SKIO Dock Water Level Monitor</option>
+          <option value="9.0">Hwy 80 at Chimney Creek on Tybee Island Water Level Monitor</option>
+          <option value="10.0">Kilkenny Creek Water Level Monitor</option>
+          <option value="11.0">Shipyard Road Water Level Monitor</option>
+          <option value="12.0">Fort Pulaski (B) Water Level Monitor</option>
+          <option value="13.0">Hwy 17 at Salt Creek Water Level Monitor</option>
+          <option value="14.0">Landings Harbor Marina Water Level Monitor</option>
+          <option value="15.0">Savannah State Water Level Monitor</option>
+          <option value="16.0">Catalina Drive Water Level Monitor</option>
+          <option value="17.0">Lazaretto Creek Fishing Pier Water Level Monitor</option>
+          <option value="18.0">Coffee Bluff Marina Water Level Monitor</option>
+          <option value="19.0">Bull River Marina Water Level Monitor</option>
+          <option value="20.0">Diamond Causeway at Shipyard Creek Water Level Monitor</option>
+          <option value="21.0">Rose Dhu Island Water Level Monitor</option>
+          <option value="22.0">Skidaway Road at Herb River Water Level Monitor</option>
+          <option value="23.0">Solomon Bridge Water Level Monitor</option>
+          <option value="24.0">Dean Forest Road at Harden Canal Water Level Monitor</option>
+          <option value="25.0">Sapelo Island Ferry Dock Water Level Monitor</option>
+          <option value="26.0">LaRoche Avenue at Nottingham Creek Water Level Monitor</option>
+          <option value="27.0">Delegal Creek Marina Water Level Monitor</option>
+          <option value="28.0">Wilmington Park Canal Water Level Monitor</option>
+          <option value="29.0">Turner Creek Boat Ramp Water Level Monitor</option>
+          <option value="30.0">Hwy 21 at St Augustine Creek Water Level Monitor</option>
+          <option value="31.0">Ossabaw Island North Dock Water Level Sensor</option>
+          <option value="32.0">Hwy 17 at Little Ogeechee River Water Level Monitor</option>
+          <option value="33.0">Rodney J. Hill Boat Ramp Water Level Monitor</option>
+          <option value="34.0">Little Neck Road at Little Ogeechee Tributary Water Level Monitor</option>
+          <option value="35.0">Dean Forest Road at I-16 Water Level Monitor</option>
+          <option value="36.0">Hwy 204 at Ford Ave Water Level Monitor</option>
+      </select>
+      <label style="text-align: center">
+	     <input  type="submit" value="Submit">
+      </label>
+    </form>
+    <p style="margin-bottom:2cm"/>
+
+    <iframe src="result.mustache" height="1000px" frameBorder="0" name="results_iframe" style="display:block;width:70%;margin-left:auto;margin-right:auto"></iframe>
+  </body>
+</html>

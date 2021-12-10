@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+  <head>
+    <title>Result</title>
+    <link type="text/css" rel="stylesheet" href="table.css" />
+      <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+  <table class="CSS_Table_Example" style="margin:auto; width: 400px">
+      <tr>
+          <td>Latest Water Level Reading</td><td>Date</td><td>Hour</td>
+      </tr>
+      <tr>
+          <td>{{water_level}} Feet</td><td>{{date}}</td><td>{{hour}}</td>
+      </tr>
+  </table>
+    <p style="bottom-margin:10px">
+  <table class="CSS_Table_Example" style="width:500px;margin:auto;">
+      <tr><td>Weather Day of Reading</td></tr>
+  </table>
+     <table class="CSS_Table_Example" style="width:500px;margin:auto;">
+	<tr><td>Precipitation</td><td>Avg Temp</td><td>High</td><td>Low</td></tr>
+	<tr><td>{{precipitation}}mm</td><td>{{avg_temp}}&#176;F</td><td>{{high_temp}}&#176;F</td><td>{{low_temp}}&#176;F</td></tr>
+     </table>
+    </p>
+  <div id="chart_container" style="width:100%; height:40%"></div>
+  <script>
+      // create data
+      anychart.onDocumentReady(function() {
+          console.log("here")
+          var data = [
+              ["00:00", {{avg_00}}],
+              ["01:00", {{avg_01}}],
+              ["02:00", {{avg_02}}],
+              ["03:00", {{avg_03}}],
+              ["04:00", {{avg_04}}],
+              ["05:00", {{avg_05}}],
+              ["06:00", {{avg_06}}],
+              ["07:00", {{avg_07}}],
+              ["08:00", {{avg_08}}],
+              ["09:00", {{avg_09}}],
+              ["10:00", {{avg_10}}],
+              ["11:00", {{avg_11}}],
+              ["12:00", {{avg_12}}],
+              ["13:00", {{avg_13}}],
+              ["14:00", {{avg_14}}],
+              ["15:00", {{avg_15}}],
+              ["16:00", {{avg_16}}],
+              ["17:00", {{avg_17}}],
+              ["18:00", {{avg_18}}],
+              ["19:00", {{avg_19}}],
+              ["20:00", {{avg_20}}],
+              ["21:00", {{avg_21}}],
+              ["22:00", {{avg_22}}],
+              ["23:00", {{avg_23}}],
+          ];
+
+          // create a chart
+          var chart = anychart.line();
+
+          chart.data(data)
+
+          chart.title("Historical Average Water Level Each Hour")
+
+          chart.yAxis().title('Water Level Reading (Feet)');
+          chart.xAxis().title('Time of Day');
+          chart.xAxis().labels().padding(5);
+
+          chart.background().stroke("5 #7fcdff");
+
+          // set the container id
+          chart.container("chart_container");
+
+          // initiate drawing the chart
+          chart.draw();
+      })
+  </script>
+</body></html>
