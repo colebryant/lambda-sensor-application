@@ -12,9 +12,11 @@ Note: The speed layer of this application is limited, as it is achieved by manua
 ### Running Application Screenshots
 
 Sensor Readings Page
+
 <img src="images/Readings_Page.png" width="600"/>
 
 Reading Submission Page
+
 <img src="images/Submit_Page.png" width="600"/>
 
 ### How to Run Deployed Application
