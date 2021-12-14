@@ -5,7 +5,7 @@ MPCS 53014: Big Data Application Architecture - Final Project
 
 The motivation for this project was to build a scalable big data application with Lambda architecure. I chose to build a very basic dashboard which displays data from the Smart Sea Level Sensors project (https://www.sealevelsensors.org/) along with associated local Savannah, GA weather data from NOAA (https://www.ncdc.noaa.gov/cdo-web/search). The project has four layers: the batch layer, the serving layer, the speed layer, and the UI layer, as described below.
 
-Technologies used: HDFS, HQL, Apache HBase, Apache Spark, Apache Kafka, Scala, Node.js, Mustache templates, Shell scripts, AWS EMR & EC2
+Technologies used: Hadoop DFS, HiveQL, Apache HBase, Apache Spark, Apache Kafka, Scala, Node.js, Mustache templates, Shell scripts, AWS EMR & EC2
 
 Note: The speed layer of this application is limited, as it is achieved by manually inputting a sensor's water level reading in the web app, which will then increment the ```cwbryant_hourly_totals_view``` table (visualized in the line graph on the web app). Future iterations would have both sensor and weather data streamed in directly from the Smart Sea Level Sensors and NOAA APIs via ingestion programs.
 
